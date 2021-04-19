@@ -4,23 +4,27 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 	<title>Weather Web App</title>
 </head>
 <body>
-	<div class="searchDivBar"> 
-		<label>Location</label>
-		<input type="text" id="location" name="location">
-		<button id="submitToAPI">Submit</button>
-		
-	</div>
-
-	<div class="weatherCard">
-		<h1 id="place">hello</h1>
-		<p id="description"></p>
-		<p id="feelslike"></p>
-		<p id="temp"></p>
-		<p id="humidity"></p>
+	<div id="app" class="weatherCard">
+		<div class="searchDivBar"> 
+			<input type="text" class="searchBar" v-model="locationInput" name="location" placeholder="Seach for a city">
+			<button class='searchButton' v-on:click="outputWeather">Submit</button>
+		</div>
+		<h1 class="place">{{place}}</h1>
+		<p class="description">{{description}}</p>
+		<p class="feelslike">Feels Like: {{feelslike}}°</p>
+		<p class="temp">{{temp}}°</p>
+		<p class="humidity">Humidity: {{humidity}}%</p>
 	
 	</div>
+
+
+
+	<script src="https://unpkg.com/vue@3.0.5"></script>
+	<script src="client.js"></script>
 </body>
 </html>
